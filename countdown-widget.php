@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows multiple instances and customizations. Powered by: <a href="http://shailan.com" title="Wordpress expert here">shailan.com</a>.
-Version: 2.0
+Version: 2.1
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -20,9 +20,8 @@ class shailan_CountdownWidget extends WP_Widget {
 		
 		if ( is_active_widget(false, false, $this->id_base, true) ) {
 			wp_enqueue_script('jquery');
-			wp_enqueue_script('countdown', WP_PLUGIN_URL . '/wp-countdown-widget/js/jquery.countdown.min.js', 'jquery', '1.0', false);
-			//wp_enqueue_style( $handle, $src, $deps, $ver, $media )
-			wp_enqueue_style('countdown-style', WP_PLUGIN_URL . '/wp-countdown-widget/css/jquery.countdown.css', '', '1.1', false);
+			wp_enqueue_script('countdown', get_plugin_path(__FILE__) . 'js/jquery.countdown.min.js', 'jquery', '1.0', false);
+			wp_enqueue_style('countdown-style', get_plugin_path(__FILE__) . 'css/jquery.countdown.css', '', '1.1', false);
 		}	
 		
 		add_action( 'wp_head', array(&$this, 'header'), 10, 1 );	
