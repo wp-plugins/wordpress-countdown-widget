@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows multiple instances and customizations. Powered by: <a href="http://shailan.com" title="Wordpress expert here">shailan.com</a>.
-Version: 2.1
+Version: 2.2
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -107,6 +107,9 @@ class shailan_CountdownWidget extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('month'); ?>"><?php _e('Date:'); ?></label><input id="<?php echo $this->get_field_id('month'); ?>" name="<?php echo $this->get_field_name('month'); ?>" type="text" value="<?php echo $month; ?>" size="2" maxlength="2" />/<input id="<?php echo $this->get_field_id('day'); ?>" name="<?php echo $this->get_field_name('day'); ?>" type="text" value="<?php echo $day; ?>" size="2" maxlength="2" />/<input id="<?php echo $this->get_field_id('year'); ?>" name="<?php echo $this->get_field_name('year'); ?>" type="text" value="<?php echo $year; ?>" size="4" maxlength="4" /><br /> 
 		<small>MM DD YYYY</small></p>
 		
+		<p><label for="<?php echo $this->get_field_id('hour'); ?>"><?php _e('Time:'); ?></label><input id="<?php echo $this->get_field_id('hour'); ?>" name="<?php echo $this->get_field_name('hour'); ?>" type="text" value="<?php echo $hour; ?>" size="2" maxlength="2" />:<input id="<?php echo $this->get_field_id('minutes'); ?>" name="<?php echo $this->get_field_name('minutes'); ?>" type="text" value="<?php echo $minutes; ?>" size="2" maxlength="2" />:<input id="<?php echo $this->get_field_id('seconds'); ?>" name="<?php echo $this->get_field_name('seconds'); ?>" type="text" value="<?php echo $seconds; ?>" size="4" maxlength="4" /><br /> 
+		<small>HH:MM:SS</small></p>
+		
 		<p><label for="<?php echo $this->get_field_id('color'); ?>"><?php _e('Color:'); ?> #<input id="<?php echo $this->get_field_id('color'); ?>" name="<?php echo $this->get_field_name('color'); ?>" type="text" value="<?php echo $color; ?>" size="6" maxlength="6" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('bgcolor'); ?>"><?php _e('Background color:'); ?> #<input id="<?php echo $this->get_field_id('bgcolor'); ?>" name="<?php echo $this->get_field_name('bgcolor'); ?>" type="text" value="<?php echo $bgcolor; ?>" size="6" maxlength="6" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('width'); ?>"><?php _e('Width:'); ?> <input id="<?php echo $this->get_field_id('width'); ?>" name="<?php echo $this->get_field_name('width'); ?>" type="text" value="<?php echo $width; ?>" size="4" maxlength="4" />px</label></p>
@@ -130,8 +133,15 @@ class shailan_CountdownWidget extends WP_Widget {
 				$countdown = $all_widgets[$key];
 			
 				echo "\n<style type=\"text/css\" media=\"screen\">";
+				echo "\n\t #shailan-countdown-".$key."{ ";
 				// Background color
-				echo "\n\t #shailan-countdown-".$key."{ background-color: #".$countdown['bgcolor']."; color: #".$countdown['color']."; }";
+				if(!empty($countdown['bgcolor'])){ echo "\n\tbackground-color: #".$countdown['bgcolor'].";"; };
+				// Color
+				if(!empty($countdown['color'])){ echo "\n\tcolor: #".$countdown['color'].";"; };
+				// Width
+				if(!empty($countdown['width']) && $countdown['width']>0){ echo "\n\twidth:".$countdown['width']."px;"; };
+				echo "\n\tmargin:0px auto;";
+				echo "}";
 				echo "\n</style>\n";
 			}
 		}
