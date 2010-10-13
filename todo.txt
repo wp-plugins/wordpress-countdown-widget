@@ -1,0 +1,2 @@
+* Add format options
+* Add image styling
