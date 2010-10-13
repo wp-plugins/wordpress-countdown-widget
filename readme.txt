@@ -31,6 +31,9 @@ You can ask your questions [here](http://shailan.com/wordpress/plugins/countdown
 
 == Changelog ==
 
+= 2.3 =
+* Removed border around the countdown.
+
 = 2.2 = 
 * Added hour/minutes/seconds options to the widget.
 
