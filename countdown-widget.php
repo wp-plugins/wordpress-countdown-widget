@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows multiple instances and customizations. Powered by: <a href="http://shailan.com" title="Wordpress expert here">shailan.com</a>.
-Version: 2.3
+Version: 2.3.1
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -43,7 +43,7 @@ class shailan_CountdownWidget extends WP_Widget {
 			'minutes'=>'0',
 			'seconds'=>'0',
 			'year'=>'',
-			'format'=>'HMS',
+			'format'=>'yowdHMS',
 			'color'=>'',
 			'bgcolor'=>'',
 			'width'=>'',
