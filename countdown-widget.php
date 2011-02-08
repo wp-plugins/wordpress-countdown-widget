@@ -8,6 +8,8 @@ Author: Matt Say
 Author URI: http://shailan.com
 */
 
+global $countdown_shortcode_ids;
+
 /**
  * Shailan Countdown Widget Class
  */
@@ -54,13 +56,18 @@ class shailan_CountdownWidget extends WP_Widget {
 	
     /** @see WP_Widget::widget */
     function widget($args, $instance) {		
+		global $post, $countdown_shortcode_ids;
+	
         extract( $args );
 		
 		$widget_options = wp_parse_args( $instance, $this->defaults );
 		extract( $widget_options, EXTR_SKIP );
 		
+		// Get a new id
+		$countdown_shortcode_ids++;
+		
 		if(!empty($instance['link'])){ $link = (bool) $link; }
-		$height = 80*$width/250;
+		// $height = 80*$width/250;
 		
 		$path = get_plugin_path(__FILE__);
 			
@@ -70,7 +77,7 @@ class shailan_CountdownWidget extends WP_Widget {
 							echo $before_title . $title . $after_title;
 					?>
 
-				<div id="shailan-countdown-<?php echo $this->number; ?>" class="countdown"></div>
+				<div id="shailan-countdown<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>" class="countdown"></div>
 				<?php				
 				if(!$link){echo '<div><small><a href="http://shailan.com/wordpress/plugins/countdown" title="Get your own counter widget!" style="float:right;">&uarr; Get this</a></small></div>';};
 				?>
@@ -82,7 +89,7 @@ class shailan_CountdownWidget extends WP_Widget {
 		var event_month = <?php echo $month; ?> - 1;
 		desc = '<?php echo $event; ?>';
 		eventDate = new Date(<?php echo $year; ?>, event_month, <?php echo $day; ?>, <?php echo $hour; ?>, <?php echo $minutes; ?>, <?php echo $seconds; ?>, 0);
-		$('#shailan-countdown-<?php echo $this->number; ?>').countdown({until: eventDate, description: desc,  format: '<?php echo $format; ?>' }); 			
+		$('#shailan-countdown<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>').countdown({until: eventDate, description: desc,  format: '<?php echo $format; ?>' }); 			
 	});
 //-->
 </script>				
@@ -167,6 +174,35 @@ class shailan_CountdownWidget extends WP_Widget {
 	
 
 } // class shailan_CountdownWidget
+
+function shailan_CountdownWidget_shortcode( $atts, $content = null ){
+	global $post, $subpages_indexes;
+	
+	$args = shortcode_atts(array(
+			'title'=>'',
+			'event'=>'',
+			'month'=>'',
+			'day'=>'',
+			'hour'=>'0',
+			'minutes'=>'0',
+			'seconds'=>'0',
+			'year'=>'',
+			'format'=>'yowdHMS',
+			'color'=>'',
+			'bgcolor'=>'',
+			'width'=>'',
+			'link'=>false,
+			'href'=>''
+		), $atts );
+	
+	ob_start();
+	the_widget( 'shailan_CountdownWidget', $args );
+	$cd_code = ob_get_contents();
+	ob_end_clean();
+	
+	return $cd_code;
+	
+} add_shortcode( 'countdown', 'shailan_CountdownWidget_shortcode');
 
 // register widget
 add_action('widgets_init', create_function('', 'return register_widget("shailan_CountdownWidget");'));
