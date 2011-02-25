@@ -1,2 +1,2 @@
-* Add format options
+* Add layout options
 * Add image styling
