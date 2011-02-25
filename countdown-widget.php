@@ -181,6 +181,7 @@ function shailan_CountdownWidget_shortcode( $atts, $content = null ){
 	$args = shortcode_atts(array(
 			'title'=>'',
 			'event'=>'',
+			'date'=>false,
 			'month'=>'',
 			'day'=>'',
 			'hour'=>'0',
@@ -194,6 +195,14 @@ function shailan_CountdownWidget_shortcode( $atts, $content = null ){
 			'link'=>false,
 			'href'=>''
 		), $atts );
+		
+	if( $args['date'] ){
+		if (($timestamp = strtotime( $args['date'] )) !== false) {
+			$args['month'] = date("n", $timestamp );
+			$args['day'] = date("j", $timestamp );
+			$args['year'] = date("Y", $timestamp );
+		}
+	}
 	
 	ob_start();
 	the_widget( 'shailan_CountdownWidget', $args );
