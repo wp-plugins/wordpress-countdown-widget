@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows Multiple instances, Shortcode usage, and Customizations. Powered by: <a href="http://shailan.com" title="Wordpress, Web design, Freelancing">shailan.com</a>.
-Version: 2.4
+Version: 2.4.1
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -77,7 +77,7 @@ class shailan_CountdownWidget extends WP_Widget {
 							echo $before_title . $title . $after_title;
 					?>
 
-				<div id="shailan-countdown<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>" class="countdown"></div>
+				<div id="shailan-countdown-<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>" class="shailan-countdown-<?php echo $this->number ?> countdown"></div>
 				<?php				
 				if(!$link){echo '<div><small><a href="http://shailan.com/wordpress/plugins/countdown" title="Get your own counter widget!" style="float:right;">&uarr; Get this</a></small></div>';};
 				?>
@@ -89,7 +89,7 @@ class shailan_CountdownWidget extends WP_Widget {
 		var event_month = <?php echo $month; ?> - 1;
 		desc = '<?php echo $event; ?>';
 		eventDate = new Date(<?php echo $year; ?>, event_month, <?php echo $day; ?>, <?php echo $hour; ?>, <?php echo $minutes; ?>, <?php echo $seconds; ?>, 0);
-		$('#shailan-countdown<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>').countdown({until: eventDate, description: desc,  format: '<?php echo $format; ?>' }); 			
+		$('#shailan-countdown-<?php echo $this->number . "_" . $countdown_shortcode_ids; ?>').countdown({until: eventDate, description: desc,  format: '<?php echo $format; ?>' }); 			
 	});
 //-->
 </script>				
@@ -150,7 +150,7 @@ class shailan_CountdownWidget extends WP_Widget {
 				$countdown = $all_widgets[$key];
 			
 				echo "\n<style type=\"text/css\" media=\"screen\">";
-				echo "\n\t #shailan-countdown-".$key."{ ";
+				echo "\n\t #shailan-countdown-".$key.", .shailan-countdown-".$key.".hasCountdown{ ";
 				// Background color
 				if(!empty($countdown['bgcolor'])){ 
 					echo "\n\tbackground-color: #".$countdown['bgcolor'].";"; 
