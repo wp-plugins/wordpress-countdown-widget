@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows Multiple instances, Shortcode usage, and Customizations. Powered by: <a href="http://shailan.com" title="Wordpress, Web design, Freelancing">shailan.com</a>.
-Version: 2.4.1
+Version: 2.4.3
 Author: Matt Say
 Author URI: http://shailan.com
 */
