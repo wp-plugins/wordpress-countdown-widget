@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows Multiple instances, Shortcode usage, and Customizations. Powered by: <a href="http://shailan.com" title="Wordpress, Web design, Freelancing">shailan.com</a>.
-Version: 2.4.3
+Version: 2.4.4
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -34,6 +34,7 @@ class shailan_CountdownWidget extends WP_Widget {
 		//add_action( 'wp_footer', array(&$this, 'footer'), 10, 1 );	
 		
 		$current_offset = get_option('gmt_offset');
+		
 		$this->defaults = array(
 			'title'		=>'',
 			'event'		=> '',
@@ -283,7 +284,7 @@ function shailan_CountdownWidget_shortcode( $atts, $content = null ){
 			'bgcolor'=>'',
 			'width'=>'',
 			'link'=>false,
-			'timezone' => ''
+			'timezone' => 'SCW_NONE'
 		), $atts );
 		
 	if( $args['date'] ){
