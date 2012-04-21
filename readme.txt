@@ -3,8 +3,8 @@ Contributors: mattsay
 Donate link: http://shailan.com/donate
 Tags: countdown, multi-widget, widget, jquery, shortcode, timer, clock, animated
 Requires at least: 2.8
-Tested up to: 3.2.1
-Stable tag: 2.4.4
+Tested up to: 3.3.2
+Stable tag: 2.5
 
 This simple widget allows you to add countdown timers to your site so easily. It supports color customizations & multiple instances. You can put as many as you like an it will work! You can customize the appearance with CSS as you like. It is just drag'n drop. No coding required! Just another awesome widget from [Shailan.com](http://shailan.com).
 
@@ -30,6 +30,12 @@ You can ask your questions [here](http://shailan.com/wordpress/plugins/countdown
 1. A snapshot of the widget form
 
 == Changelog ==
+
+= 2.5 = 
+* Changed: Background and Colors now support rgb and rgba values. Hex colors should include `#` infront of them.
+* Added: Support for Counting up.
+* Added: Border radius support.
+* Added: Styling support for shortcode added countdown widgets.
 
 = 2.4.4 = 
 * Hotfix: Hotfix for shortcode defaults.
