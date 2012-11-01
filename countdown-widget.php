@@ -3,7 +3,7 @@
 Plugin Name: Countdown Widget
 Plugin URI: http://shailan.com/wordpress/plugins/countdown
 Description: A beautiful jquery countdown widget. Allows Multiple instances, Shortcode usage, and Customizations. Powered by: <a href="http://shailan.com" title="Wordpress, Web design, Freelancing">shailan.com</a>.
-Version: 2.5.1
+Version: 2.5.2
 Author: Matt Say
 Author URI: http://shailan.com
 */
@@ -224,7 +224,7 @@ class shailan_CountdownWidget extends WP_Widget {
 			
 		<p><label for="<?php echo $this->get_field_id('event'); ?>"><?php _e('Event Title:'); ?> <small><a href="http://shailan.com/wordpress/plugins/countdown/help/#event-title" target="_blank" rel="external">(?)</a></small> <input class="widefat" id="<?php echo $this->get_field_id('event'); ?>" name="<?php echo $this->get_field_name('event'); ?>" type="text" value="<?php echo $event; ?>" /></label></p>
 		
-		<p><label for="<?php echo $this->get_field_id('direction'); ?>"><?php _e('Count Down/Up :'); ?>
+		<p><label for="<?php echo $this->get_field_id('direction'); ?>"> <?php _e('Count Down/Up :'); ?></label>
 			<select name="<?php echo $this->get_field_name('direction'); ?>" id="<?php echo $this->get_field_id('direction'); ?>" >
 				<option value="down" <?php if($direction == "down") { ?> selected="selected" <?php } ?>>Down</option>
 				<option value="up" <?php if($direction == "up") { ?> selected="selected" <?php } ?>>Up</option>
