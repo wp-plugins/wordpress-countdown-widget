@@ -24,11 +24,11 @@ class shailan_CountdownWidget extends WP_Widget {
 		$lang = substr( get_bloginfo('language'), 0, 2 );
 
 		wp_enqueue_script('jquery');
-		wp_enqueue_script('countdown', get_plugin_path(__FILE__) . 'js/jquery.countdown.min.js', 'jquery', '1.0', false);
-		if($lang!='en' && file_exists(plugin_dir_path(__FILE__) . 'js/jquery.countdown-' . $lang . '.js')){ 
-			wp_enqueue_script('countdown-l10n', get_plugin_path(__FILE__) . 'js/jquery.countdown-' . $lang . '.js', 'countdown', '1.0', false);
+		wp_enqueue_script('countdown', plugins_url('js/jquery.countdown.min.js', __FILE__), 'jquery', '1.0', false);
+		if($lang!='en' && file_exists( plugins_url('js/jquery.countdown-' . $lang . '.js', __FILE__)) ){ 
+			wp_enqueue_script('countdown-l10n', plugins_url('js/jquery.countdown-' . $lang . '.js',__FILE__), 'countdown', '1.0', false);
 		}
-		wp_enqueue_style('countdown-style', get_plugin_path(__FILE__) . 'css/jquery.countdown.css', '', '1.1', false);
+		wp_enqueue_style('countdown-style', plugins_url('css/jquery.countdown.css', __FILE__), '', '1.1', false);
 		
 		add_action( 'wp_head', array(&$this, 'header'), 10, 1 );	
 		//add_action( 'wp_footer', array(&$this, 'footer'), 10, 1 );	
