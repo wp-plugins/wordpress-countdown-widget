@@ -32,7 +32,7 @@ You can ask your questions [here](http://shailan.com/wordpress/plugins/countdown
 == Changelog ==
 
 = 2.5.4 = 
-* Fixed: Localization didn't work because of a php error. And the credit goes to [Frank P. Walentynowicz][http://wordpress.org/support/profile/frankpw]. Chineese still won't work. Need some help from a chineese developer.
+* Fixed: Localization didn't work because of a php error. And the credit goes to [Frank P. Walentynowicz](http://wordpress.org/support/profile/frankpw). Chineese still won't work. Need some help from a chineese developer.
 
 = 2.5.3 = 
 * Fixed: Plugin path issue. It didn't work if moved to another directory.
