@@ -5,12 +5,20 @@ Tags: countdown, count-up, multi-widget, widget, jquery, shortcode, timer, clock
 Requires at least: 2.8
 Tested up to: 4.0
 Stable tag: 2.5.5
+License: GPLv2 or later
 
-This simple widget allows you to add countdown/countup timers to your site so easily. It supports color customizations & multiple instances. You can put as many as you like an it will work! You can customize the appearance with CSS as you like. It is just drag'n drop. No coding required! Brought to you by [Shailan.com](http://shailan.com).
+Customizable, Easy to use jQuery powered CountDown/Up timer for your site. Includes both Widget and Shortcode!
 
 == Description ==
 
-This simple widget allows you to add countdown/countup timers to your site so easily. It supports color customizations & multiple instances. You can put as many as you like an it will work! You can customize the appearance with CSS as you like. It is just drag'n drop. No coding required! Brought to you by [Shailan.com](http://shailan.com).
+Add jQuery count-down/count-up timers to your blog sidebar easily. Supports color customizations & multiple instances. Just drag'n drop. No coding required! Brought to you by [Shailan.com](http://shailan.com/).
+
+*Documentation & Simple Tutorials to get you started:*
+
+* [Countdown Widget Help](http://shailan.com/plugins/countdown/help/)
+* [Countdown Shortcode Usage](http://shailan.com/2276/how-to-add-a-countdown-to-your-post-using-shortcode/)
+* [Customizing Countdown Widget Using CSS](http://shailan.com/1825/customizing-countdown-widget-using-css/)
+* [Creating a Halloween Countdown on your sidebar](http://shailan.com/4621/get-halloween-countdown-ready/)
 
 == Installation ==
 
@@ -28,6 +36,10 @@ You can ask your questions [here](http://shailan.com/wordpress/plugins/countdown
 == Screenshots ==
 
 1. A snapshot of the widget form
+
+== Upgrade Notice ==
+
+Please back up your precious data before upgrading plugins.
 
 == Changelog ==
 
