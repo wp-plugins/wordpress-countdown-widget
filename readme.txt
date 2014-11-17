@@ -4,7 +4,7 @@ Donate link: http://shailan.com/donate
 Tags: countdown, count-up, multi-widget, widget, jquery, shortcode, timer, clock, animated
 Requires at least: 2.8
 Tested up to: 4.0
-Stable tag: 2.5.6
+Stable tag: 2.5.7
 License: GPLv2 or later
 
 Customizable, Easy to use jQuery powered CountDown/Up timer for your site. Includes both Widget and Shortcode!
@@ -15,7 +15,7 @@ Add jQuery count-down/count-up timers to your blog sidebar easily. Supports colo
 
 *Documentation & Simple Tutorials to get you started:*
 
-* [Countdown Widget Help](http://shailan.com/plugins/countdown/help/)
+* [Countdown Widget Help](http://shailan.com/wordpress/plugins/countdown/help/)
 * [Countdown Shortcode Usage](http://shailan.com/2276/how-to-add-a-countdown-to-your-post-using-shortcode/)
 * [Customizing Countdown Widget Using CSS](http://shailan.com/1825/customizing-countdown-widget-using-css/)
 * [Creating a Halloween Countdown on your sidebar](http://shailan.com/4621/get-halloween-countdown-ready/)
@@ -31,7 +31,7 @@ Add jQuery count-down/count-up timers to your blog sidebar easily. Supports colo
 
 = Any questions? =
 
-You can ask your questions [here](http://shailan.com/wordpress/plugins/countdown/tickets)
+You can ask your questions [here](http://shailan.com/wordpress/plugins/countdown/help/)
 
 == Screenshots ==
 
@@ -76,10 +76,10 @@ Please back up your precious data before upgrading plugins.
 * Fixed: Background color issue with the latest version.
 
 = 2.4 = 
-* Added: Shortcode support. Read more on [shailan.com](http://shailan.com/wordpress/plugins/countdown)
+* Added: Shortcode support. Read more on [countdown shortcode usage](http://shailan.com/2276/how-to-add-a-countdown-to-your-post-using-shortcode/)
 
 = 2.3.1 = 
-* Changed default format string. See [formatting help](http://shailan.com/wordpress/plugins/countdown/help/#toc-format) for more details.
+* Changed default format string. See [formatting help](http://shailan.com/wordpress/plugins/countdown/help/#format) for more details.
 
 = 2.3 =
 * Removed border around the countdown.
